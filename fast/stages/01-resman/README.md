@@ -153,6 +153,7 @@ Due to its simplicity, this stage lends itself easily to customizations: adding 
 |---|---|---|---|
 | [billing.tf](./billing.tf) | Billing resources for external billing use cases. | <code>organization</code> | <code>google_billing_account_iam_member</code> |
 | [branch-data-platform.tf](./branch-data-platform.tf) | Data Platform stages resources. | <code>folder</code> · <code>gcs</code> · <code>iam-service-account</code> |  |
+| [branch-gke.tf](./branch-gke.tf) | GKE multitenant stage resources. | <code>folder</code> · <code>gcs</code> · <code>iam-service-account</code> |  |
 | [branch-networking.tf](./branch-networking.tf) | Networking stage resources. | <code>folder</code> · <code>gcs</code> · <code>iam-service-account</code> |  |
 | [branch-sandbox.tf](./branch-sandbox.tf) | Sandbox stage resources. | <code>folder</code> · <code>gcs</code> · <code>iam-service-account</code> |  |
 | [branch-security.tf](./branch-security.tf) | Security stage resources. | <code>folder</code> · <code>gcs</code> · <code>iam-service-account</code> |  |
@@ -180,13 +181,14 @@ Due to its simplicity, this stage lends itself easily to customizations: adding 
 
 | name | description | sensitive | consumers |
 |---|---|:---:|---|
-| [dataplatform](outputs.tf#L114) | Data for the Data Platform stage. |  |  |
-| [networking](outputs.tf#L130) | Data for the networking stage. |  |  |
-| [project_factories](outputs.tf#L139) | Data for the project factories stage. |  |  |
-| [providers](outputs.tf#L155) | Terraform provider files for this stage and dependent stages. | ✓ | <code>02-networking</code> · <code>02-security</code> · <code>03-dataplatform</code> · <code>xx-sandbox</code> · <code>xx-teams</code> |
-| [sandbox](outputs.tf#L162) | Data for the sandbox stage. |  | <code>xx-sandbox</code> |
-| [security](outputs.tf#L172) | Data for the networking stage. |  | <code>02-security</code> |
-| [teams](outputs.tf#L182) | Data for the teams stage. |  |  |
-| [tfvars](outputs.tf#L195) | Terraform variable files for the following stages. | ✓ |  |
+| [dataplatform](outputs.tf#L128) | Data for the Data Platform stage. |  |  |
+| [gke_multitenant](outputs.tf#L196) | Data for the GKE multitenant stage. |  | <code>03-gke-multitenant</code> |
+| [networking](outputs.tf#L144) | Data for the networking stage. |  |  |
+| [project_factories](outputs.tf#L153) | Data for the project factories stage. |  |  |
+| [providers](outputs.tf#L169) | Terraform provider files for this stage and dependent stages. | ✓ | <code>02-networking</code> · <code>02-security</code> · <code>03-dataplatform</code> · <code>xx-sandbox</code> · <code>xx-teams</code> |
+| [sandbox](outputs.tf#L176) | Data for the sandbox stage. |  | <code>xx-sandbox</code> |
+| [security](outputs.tf#L186) | Data for the networking stage. |  | <code>02-security</code> |
+| [teams](outputs.tf#L213) | Data for the teams stage. |  |  |
+| [tfvars](outputs.tf#L226) | Terraform variable files for the following stages. | ✓ |  |
 
 <!-- END TFDOC -->
