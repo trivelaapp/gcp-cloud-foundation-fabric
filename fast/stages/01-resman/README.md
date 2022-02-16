@@ -181,14 +181,14 @@ Due to its simplicity, this stage lends itself easily to customizations: adding 
 
 | name | description | sensitive | consumers |
 |---|---|:---:|---|
-| [dataplatform](outputs.tf#L128) | Data for the Data Platform stage. |  |  |
-| [gke_multitenant](outputs.tf#L196) | Data for the GKE multitenant stage. |  | <code>03-gke-multitenant</code> |
-| [networking](outputs.tf#L144) | Data for the networking stage. |  |  |
-| [project_factories](outputs.tf#L153) | Data for the project factories stage. |  |  |
-| [providers](outputs.tf#L169) | Terraform provider files for this stage and dependent stages. | ✓ | <code>02-networking</code> · <code>02-security</code> · <code>03-dataplatform</code> · <code>xx-sandbox</code> · <code>xx-teams</code> |
-| [sandbox](outputs.tf#L176) | Data for the sandbox stage. |  | <code>xx-sandbox</code> |
-| [security](outputs.tf#L186) | Data for the networking stage. |  | <code>02-security</code> |
-| [teams](outputs.tf#L213) | Data for the teams stage. |  |  |
-| [tfvars](outputs.tf#L226) | Terraform variable files for the following stages. | ✓ |  |
+| [dataplatform](outputs.tf#L136) | Data for the Data Platform stage. |  |  |
+| [gke_multitenant](outputs.tf#L204) | Data for the GKE multitenant stage. |  | <code>03-gke-multitenant</code> |
+| [networking](outputs.tf#L152) | Data for the networking stage. |  |  |
+| [project_factories](outputs.tf#L161) | Data for the project factories stage. |  |  |
+| [providers](outputs.tf#L177) | Terraform provider files for this stage and dependent stages. | ✓ | <code>02-networking</code> · <code>02-security</code> · <code>03-dataplatform</code> · <code>xx-sandbox</code> · <code>xx-teams</code> |
+| [sandbox](outputs.tf#L184) | Data for the sandbox stage. |  | <code>xx-sandbox</code> |
+| [security](outputs.tf#L194) | Data for the networking stage. |  | <code>02-security</code> |
+| [teams](outputs.tf#L221) | Data for the teams stage. |  |  |
+| [tfvars](outputs.tf#L234) | Terraform variable files for the following stages. | ✓ |  |
 
 <!-- END TFDOC -->
