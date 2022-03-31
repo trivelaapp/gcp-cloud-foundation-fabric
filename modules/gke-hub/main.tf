@@ -40,7 +40,7 @@ resource "google_gke_hub_feature" "configmanagement" {
 
 resource "google_gke_hub_feature" "mci" {
   provider = google-beta
-  for_each = var.features.mc_ingress ? var.member_clusters : {}
+  for_each = var.features.mc_ingress ? try(var.member_clusters[0], {}) : {}
   project  = var.project_id
   name     = "multiclusteringress"
   location = "global"

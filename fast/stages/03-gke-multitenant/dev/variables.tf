@@ -36,14 +36,15 @@ variable "billing_account" {
 variable "cluster_defaults" {
   description = "Default values for optional cluster configurations."
   type = object({
-    cloudrun_config             = bool
-    database_encryption_key     = string
-    enable_binary_authorization = bool
-    master_authorized_ranges    = map(string)
-    max_pods_per_node           = number
-    pod_security_policy         = bool
-    release_channel             = string
-    vertical_pod_autoscaling    = bool
+    cloudrun_config                 = bool
+    database_encryption_key         = string
+    enable_binary_authorization     = bool
+    master_authorized_ranges        = map(string)
+    max_pods_per_node               = number
+    pod_security_policy             = bool
+    release_channel                 = string
+    vertical_pod_autoscaling        = bool
+    gcp_filestore_csi_driver_config = bool
   })
   default = {
     # TODO: review defaults
@@ -55,10 +56,11 @@ variable "cluster_defaults" {
       rfc1918_2 = "172.16.0.0/12"
       rfc1918_3 = "192.168.0.0/16"
     }
-    max_pods_per_node        = 110
-    pod_security_policy      = false
-    release_channel          = "STABLE"
-    vertical_pod_autoscaling = false
+    max_pods_per_node               = 110
+    pod_security_policy             = false
+    release_channel                 = "STABLE"
+    vertical_pod_autoscaling        = false
+    gcp_filestore_csi_driver_config = false
   }
 }
 
