@@ -12,5 +12,5 @@ spec:
     repo: https://github.com/danielmarzini/configsync-application-example
     branch: main
     revision: HEAD
-    dir: "configsync/clusters/cluster-east/namespaces/zoneprinter"
+    dir: "configsync/team-a"
     auth: none
