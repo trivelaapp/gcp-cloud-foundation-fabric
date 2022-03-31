@@ -82,14 +82,15 @@ variable "clusters" {
       subnet       = string
     })
     overrides = object({
-      cloudrun_config             = bool
-      database_encryption_key     = string
-      enable_binary_authorization = bool
-      master_authorized_ranges    = map(string)
-      max_pods_per_node           = number
-      pod_security_policy         = bool
-      release_channel             = string
-      vertical_pod_autoscaling    = bool
+      cloudrun_config                 = bool
+      database_encryption_key         = string
+      enable_binary_authorization     = bool
+      master_authorized_ranges        = map(string)
+      max_pods_per_node               = number
+      pod_security_policy             = bool
+      release_channel                 = string
+      vertical_pod_autoscaling        = bool
+      gcp_filestore_csi_driver_config = bool
     })
   }))
 }
