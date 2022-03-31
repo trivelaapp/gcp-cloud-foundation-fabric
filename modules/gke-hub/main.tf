@@ -67,6 +67,12 @@ resource "google_gke_hub_feature_membership" "feature_member" {
   feature    = google_gke_hub_feature.configmanagement["1"].name
   membership = google_gke_hub_membership.membership[each.key].membership_id
 
+  depends_on = [
+    google_gke_hub_feature.configmanagement,
+    google_gke_hub_feature.mci,
+    google_gke_hub_feature.mcs,
+  ]
+
   dynamic "configmanagement" {
     for_each = (
       try(var.member_features.configmanagement, null) != null
