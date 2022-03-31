@@ -2,10 +2,10 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: syncs-repo
-  namespace: team-1
+  namespace: team-a
 subjects:
 - kind: ServiceAccount
-  name: ns-reconciler-team-1
+  name: ns-reconciler-team-a
   namespace: config-management-system
 roleRef:
   kind: ClusterRole
