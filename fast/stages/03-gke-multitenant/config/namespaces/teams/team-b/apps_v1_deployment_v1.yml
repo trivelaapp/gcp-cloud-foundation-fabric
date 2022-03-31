@@ -18,6 +18,8 @@ kind: Deployment
 metadata:
   namespace: team-b
   name: whereami
+  labels:
+    geo: "europe-west1"
 spec:
   replicas: 1
   selector:

@@ -32,6 +32,9 @@ spec:
     - "cos-auditd"
     - "gatekeeper-system"
     - "kube-node-lease"
+    - "cnrm-system"
+    - "gke-mcs"
+    - "configconnector-operator-system"
     kinds:
       - apiGroups: [""]
         kinds: ["Namespace"]
