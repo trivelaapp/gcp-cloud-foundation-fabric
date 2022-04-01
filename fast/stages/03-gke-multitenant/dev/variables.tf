@@ -18,11 +18,11 @@
 # 1 project, m clusters
 # cloud dns for gke?
 
-# variable "authenticator_security_group" {
-#   description = "Optional group used for Groups for GKE."
-#   type        = string
-#   default     = null
-# }
+variable "authenticator_security_group" {
+  description = "Optional group used for Groups for GKE."
+  type        = string
+  default     = null
+}
 
 variable "billing_account" {
   # tfdoc:variable:source 00-bootstrap
@@ -99,12 +99,6 @@ variable "clusters" {
 
 variable "dns_domain" {
   description = "Domain name used for clusters, prefix by each cluster name. Leave null to disable Cloud DNS for GKE."
-  type        = string
-  default     = null
-}
-
-variable "authenticator_security_group" {
-  description = "Google Groups for RBAC, group name"
   type        = string
   default     = null
 }
