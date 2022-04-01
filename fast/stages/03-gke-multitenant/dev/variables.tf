@@ -97,6 +97,12 @@ variable "clusters" {
   }))
 }
 
+variable "cluster_viewer_users" {
+  description = "list of users to be granted as container.clusterViewer"
+  type        = list(any)
+  default     = []
+}
+
 variable "dns_domain" {
   description = "Domain name used for clusters, prefix by each cluster name. Leave null to disable Cloud DNS for GKE."
   type        = string

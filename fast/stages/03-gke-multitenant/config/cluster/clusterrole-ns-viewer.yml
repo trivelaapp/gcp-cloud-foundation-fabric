@@ -18,8 +18,11 @@ kind: ClusterRole
 metadata:
   name: dev-namespace-viewer
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
+- apiGroups: ["", "metrics.k8s.io", "extensions", "apps"] 
+  resources: 
+    - "pods"
+    - "pods/log"
+    - "events"
+    - "deployments" 
+    - "replicasets" 
   verbs: ["get", "watch", "list"]
-  # add httproute
-  # add services
