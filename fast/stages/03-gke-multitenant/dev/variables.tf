@@ -103,6 +103,12 @@ variable "dns_domain" {
   default     = null
 }
 
+variable "authenticator_security_group" {
+  description = "Google Groups for RBAC, group name"
+  type        = string
+  default     = null
+}
+
 variable "folder_ids" {
   # tfdoc:variable:source 01-resman
   description = "Folders to be used for the networking resources in folders/nnnnnnnnnnn format. If null, folder will be created."
