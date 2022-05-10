@@ -67,7 +67,10 @@ resource "google_compute_project_metadata_item" "oslogin_meta" {
   key     = "enable-oslogin"
   value   = "TRUE"
   # depend on services or it will fail on destroy
-  depends_on = [google_project_service.project_services]
+  depends_on = [
+    google_project_organization_policy.boolean,
+    google_project_service.project_services
+  ]
 }
 
 resource "google_resource_manager_lien" "lien" {
