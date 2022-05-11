@@ -171,7 +171,7 @@ module "vm_siege" {
     EOT
   }
   tags = [
-    "http-server"
+    "ssh"
   ]
 }
 
