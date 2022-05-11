@@ -178,8 +178,8 @@ module "vm_siege" {
 module "mig_ew1" {
   source     = "../../../modules/compute-mig"
   project_id = module.project.project_id
-  location   = "europe-west1-mig"
-  name       = "mig-ew1"
+  location   = "europe-west1"
+  name       = "europe-west1-mig"
   regional   = true
   default_version = {
     instance_template = module.instance_template_ew1.template.self_link
