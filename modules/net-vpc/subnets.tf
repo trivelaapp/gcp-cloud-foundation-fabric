@@ -30,9 +30,9 @@ locals {
       subnet = k
       role   = "roles/compute.networkUser"
       members = concat(
-        formatlist("group:%s", try(v.iam_groups, [])),
-        formatlist("user:%s", try(v.iam_users, [])),
-        formatlist("serviceAccount:%s", try(v.iam_service_accounts, []))
+        formatlist("group:%s", v.iam_groups),
+        formatlist("user:%s", v.iam_users),
+        formatlist("serviceAccount:%s", v.iam_service_accounts)
       )
     }
   ]
@@ -48,10 +48,13 @@ locals {
   }
   _factory_subnets = {
     for k, v in local._factory_data : "${v.region}/${k}" => {
-      ip_cidr_range      = v.ip_cidr_range
-      name               = k
-      region             = v.region
-      secondary_ip_range = try(v.secondary_ip_range, {})
+      ip_cidr_range        = v.ip_cidr_range
+      name                 = k
+      region               = v.region
+      secondary_ip_range   = try(v.secondary_ip_range, {})
+      iam_users            = try(v.iam_users, [])
+      iam_groups           = try(v.iam_groups, [])
+      iam_service_accounts = try(v.iam_service_accounts, [])
     }
   }
   _iam = var.iam == null ? {} : var.iam
