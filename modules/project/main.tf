@@ -51,6 +51,7 @@ resource "google_project" "project" {
   auto_create_network = var.auto_create_network
   labels              = var.labels
   skip_delete         = var.skip_delete
+  provider            = google-beta
 }
 
 resource "google_project_service" "project_services" {
